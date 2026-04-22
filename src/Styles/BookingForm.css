@@ -1,0 +1,113 @@
+/* PAGE WRAPPER */
+.booking-page {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+  padding: 50px;
+  height: 900px;
+  background: #f8f8f8;
+
+  /* Background image */
+  background: url("../assets/REV1.jpg") no-repeat center center/cover;
+}
+
+/* FORM SIDE */
+.booking-container {
+  flex: 1;
+  width:100%;
+  max-width: 500px;
+  height: 100%;
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+.booking-container h2 {
+  margin-bottom: 20px;
+  color: #ff4d6d;
+}
+
+/* FORM */
+form {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+input, textarea {
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: rgb(232, 189, 189);
+}
+
+textarea {
+  height: 80px;
+}
+
+label {
+  font-weight: bold;
+  margin-top: 10px;
+  color:rgb(190, 98, 98)
+}
+
+.checkbox-group {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+/* BUTTON */
+button {
+  margin-top: 5px;
+  padding: 12px 20px;
+  background: rgb(146, 95, 95);
+  color: rgb(231, 161, 161);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 28px;
+}
+
+button:hover {
+  background: #e63950;
+}
+
+/* IMAGE SIDE */
+.booking-image {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+}
+
+.booking-image img {
+  width: 100%;
+  max-width: 2700px;;
+  border-radius: 15px;
+  object-fit: cover;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .booking-page {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .booking-container,
+  .booking-image {
+    width: 700px;
+    max-width: 200px;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .booking-image {
+    margin-top: 20px;
+  }
+}

@@ -1,0 +1,101 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgb(234, 159, 159);
+  color: rgb(82, 24, 63);
+  padding: 15px 30px;
+  width: 100%;
+  position: relative; /* ✅ ADD */
+  z-index: 1000;       /* ✅ ADD */
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+/* Wrapper (background + style) */
+.logo-box {
+  background: linear-gradient(to right, #ff758c, #ff7eb3);
+  padding: 5px;
+  border-radius: 50%;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+/* Image */
+.logo img {
+  width: 100px;
+  height: 100px;   /* ✅ equal rakho */
+  border-radius: 50%;
+  object-fit: cover;
+  background: rgb(240, 210, 210);
+  transition: 0.3s;
+}
+
+/* Hover effect 🔥 */
+.logo img:hover {
+  transform: scale(1.1);
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+  color: rgb(82, 24, 63);;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.nav-links li {
+  position: relative; /* ✅ ADD (dropdown ke liye) */
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: black;
+  font-size: 20px;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: #ffe0e6;
+}
+
+/* 🔽 DROPDOWN START */
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  color: black;
+  list-style: none;
+  padding: 10px 0;
+  display: none;
+  min-width: 180px;
+  border-radius: 8px;
+  z-index: 9999;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.dropdown-menu li {
+  padding: 10px 15px;
+}
+
+.dropdown-menu li a {
+  color: rgb(82, 24, 63);
+  font-size: 20px;
+}
+
+.dropdown-menu li:hover {
+  background: #ffe0e6;
+}
+
+/* 🔥 Hover pe show */
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+.dropdown > span {
+  font-size: 20px;
+}
+/* 🔼 DROPDOWN END */

@@ -1,0 +1,348 @@
+.goa-page {
+  font-family: "Poppins", sans-serif;
+  background-color: rgb(201, 129, 129);
+  margin: 0%;
+  padding: 0%;
+}
+
+/* HERO */
+.hero {
+  position: relative;
+  height: 600px;
+
+  background-image: url("../assets/goaHero.jpg");
+  background-size: cover;        /* full cover */
+  background-position: center;   /* center focus */
+  background-repeat: no-repeat;
+
+  position: relative;
+  padding-top: 15px;
+  text-align: center;
+}
+
+/* overlay dark effect (VERY IMPORTANT for clarity) */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.2); /* dark overlay */
+}
+
+
+/* content above overlay */
+.overlay {
+  position: relative;
+  z-index: 2;
+  top: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;   /* 👈 center everything */
+  justify-content: center;
+  transform: translateY(-50%);
+  color: white;
+  text-align: center;
+}
+.overlay h1 {
+  font-size: 50px;
+  font-weight: bold;
+
+}
+
+.overlay p {
+  margin: 10px;
+}
+
+.hero-btn {
+  border: none;
+  background: rgb(201, 108, 108);
+  color: white;
+  border-radius: 25px;
+  cursor: pointer;
+  padding: 10px 30px;
+}
+
+/* VENUES */
+.venues {
+  padding: 60px 40px;
+  text-align: center;
+}
+.venues h2 {
+  margin-bottom: 20px;
+  color:white;
+  font-size: 30px;
+}
+
+.venue-cards {
+  display: flex;
+  gap: 55px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.card {
+  width: 300px;
+  border-radius: 15px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 15px;
+  text-align: left;
+}
+
+.details {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+  font-size: 14px;
+}
+
+.price {
+  color: #ff7a00;
+  font-weight: bold;
+}
+
+.card button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  background: black;
+  color: white;
+  border-radius: 8px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+
+.packages {
+  padding: 60px 40px;
+  text-align: center;
+}
+
+.package-cards {
+  display: flex;
+  gap: 55px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+.packages h2{
+  margin-bottom: 20px;
+  color:white;
+  font-size: 30px;
+}
+
+.package {
+  width: 300px;
+  background: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.package:hover {
+  transform: translateY(-10px);
+}
+
+/* IMAGE */
+.package img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+/* CONTENT */
+.package-content {
+  padding: 15px;
+  text-align: left;
+}
+
+.package-content h3 {
+  margin-bottom: 5px;
+}
+
+.price {
+  color: #ff7a00;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.package-content ul {
+  padding-left: 18px;
+  font-size: 14px;
+}
+
+.package-content li {
+  margin-bottom: 5px;
+}
+
+/* BUTTON */
+.package button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border: none;
+  background: black;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* BADGE */
+.badge {
+  position: absolute;
+  top: 10px;
+  left: -10px;
+  background: orange;
+  color: white;
+  padding: 5px 15px;
+  font-size: 12px;
+  transform: rotate(-20deg);
+}
+
+/* POPULAR CARD */
+.popular {
+  border: 2px solid orange;
+}
+
+.gallery {
+  padding: 50px;
+  text-align: center;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 per row */
+  gap: 15px;
+  margin-top: 20px;
+}
+
+/* images */
+.gallery-grid img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: 0.4s;
+}
+
+/* hover effect (premium feel) */
+.gallery-grid img:hover {
+  transform: scale(1.05);
+}
+
+/* WHY */
+.why {
+  padding: 60px 40px;
+  text-align: center;
+  background: #f9f9f9;
+  color:rgb(18, 17, 16)
+}
+.why h2 {
+  margin-bottom: 20px;
+  color: black;
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.why-card {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  transition: 0.3s;
+}
+
+.why-card:hover {
+  transform: translateY(-8px);
+}
+
+.why-card h3 {
+  margin-bottom: 10px;
+  color:rgb(18, 17, 16);
+  font-weight: bold;
+  
+}
+
+.why-card p {
+  font-size: 14px;
+  color: #555;
+}
+/* CONTACT FORM */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.contact-form button {
+  background: #ff4d6d;
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+/* POPUP */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 1000;
+}
+
+.popup-box {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  width: 400px;
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
