@@ -41,7 +41,7 @@ const locations = [
   {
     id: 5,
     name: "Uttar Pradesh",
-    path: "/uttar-pradesh",
+    path: "/Uttar-pradesh",
     image: "/images/up.jpg",
     description: "Heritage & cultural wedding destinations",
     price: "₹5L - ₹35L",

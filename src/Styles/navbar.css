@@ -1,101 +1,125 @@
+/* 🌐 NAVBAR */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: rgb(234, 159, 159);
+  background: rgba(234, 159, 159, 0.9);
+  backdrop-filter: blur(10px); /* 🔥 glass effect */
   color: rgb(82, 24, 63);
-  padding: 15px 30px;
+  padding: 12px 40px;
   width: 100%;
-  position: relative; /* ✅ ADD */
-  z-index: 1000;       /* ✅ ADD */
+  position: sticky;  /* ✅ better than relative */
+  top: 0;
+  z-index: 1000;
 }
 
+/* 🧁 LOGO */
 .logo {
   display: flex;
   align-items: center;
 }
 
-/* Wrapper (background + style) */
-.logo-box {
-  background: linear-gradient(to right, #ff758c, #ff7eb3);
-  padding: 5px;
-  border-radius: 50%;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-}
-
-/* Image */
 .logo img {
-  width: 100px;
-  height: 100px;   /* ✅ equal rakho */
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
   object-fit: cover;
   background: rgb(240, 210, 210);
-  transition: 0.3s;
-}
-
-/* Hover effect 🔥 */
-.logo img:hover {
-  transform: scale(1.1);
-}
-
-.nav-links {
-  display: flex;
-  list-style: none;
-  gap: 30px;
-  color: rgb(82, 24, 63);;
-  font-size: 18px;
-  font-weight: bold;
-}
-
-.nav-links li {
-  position: relative; /* ✅ ADD (dropdown ke liye) */
-}
-
-.nav-links a {
-  text-decoration: none;
-  color: black;
-  font-size: 20px;
-  transition: 0.3s;
-}
-
-.nav-links a:hover {
-  color: #ffe0e6;
-}
-
-/* 🔽 DROPDOWN START */
-.dropdown-menu {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background: white;
-  color: black;
-  list-style: none;
-  padding: 10px 0;
-  display: none;
-  min-width: 180px;
-  border-radius: 8px;
-  z-index: 9999;
+  transition: 0.4s ease;
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
+.logo img:hover {
+  transform: scale(1.1) rotate(5deg);
+}
+
+/* 🔗 NAV LINKS */
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 35px;
+}
+
+/* 👇 each item */
+.nav-links li {
+  position: relative;
+}
+
+/* 🔥 Stylish font */
+.nav-links a,
+.dropdown > span {
+  text-decoration: none;
+  color: rgb(30, 11, 23);
+  font-size: 18px;
+  font-weight:bold;
+  font-family: 'playfair display', serif;
+  letter-spacing: 1px;
+  position: relative;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* ✨ Underline animation */
+.nav-links a::after,
+.dropdown > span::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background: #e91e63;
+  left: 0;
+  bottom: -5px;
+  transition: 0.3s ease;
+}
+
+.nav-links a:hover::after,
+.dropdown:hover > span::after {
+  width: 100%;
+}
+
+/* 🎨 Hover color */
+.nav-links a:hover,
+.dropdown > span:hover {
+  color: #e91e63;
+}
+
+/* 🔽 DROPDOWN */
+.dropdown-menu {
+  position: absolute;
+  top: 120%;
+  left: 0;
+  background: white;
+  list-style: none;
+  padding: 10px 0;
+  display: none;
+  min-width: 200px;
+  border-radius: 10px;
+  z-index: 9999;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  opacity: 0;
+  transform: translateY(10px);
+  transition: 0.3s ease;
+}
+
+/* dropdown items */
 .dropdown-menu li {
-  padding: 10px 15px;
+  padding: 10px 20px;
 }
 
 .dropdown-menu li a {
   color: rgb(82, 24, 63);
-  font-size: 20px;
+  font-size: 16px;
+  font-family: 'Poppins', sans-serif;
 }
 
+/* hover effect */
 .dropdown-menu li:hover {
   background: #ffe0e6;
 }
 
-/* 🔥 Hover pe show */
+/* 🔥 Show dropdown with animation */
 .dropdown:hover .dropdown-menu {
   display: block;
+  opacity: 1;
+  transform: translateY(0);
 }
-.dropdown > span {
-  font-size: 20px;
-}
-/* 🔼 DROPDOWN END */

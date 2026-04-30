@@ -68,6 +68,7 @@
 .venues {
   padding: 60px 40px;
   text-align: center;
+  
 }
 .venues h2 {
   margin-bottom: 20px;
@@ -81,6 +82,7 @@
   justify-content: center;
   flex-wrap: wrap;
   margin-top: 30px;
+  
 }
 
 .card {
@@ -123,7 +125,7 @@
   width: 100%;
   padding: 10px;
   border: none;
-  background: black;
+  background: white;
   color: white;
   border-radius: 8px;
   margin-top: 10px;

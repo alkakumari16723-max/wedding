@@ -1,0 +1,316 @@
+/* FONT (add in index.html if not added) */
+/* 
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.wedding-page {
+  font-family: 'Poppins', sans-serif;
+  background: #fff;
+}
+
+/* HERO */
+.wed-hero {
+  position: relative;
+  height: 90vh;
+  overflow: hidden;
+}
+
+.wed-hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(60%);
+}
+
+.wed-hero .overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
+}
+
+.wed-hero h1 {
+  font-size: 48px;
+  font-family: 'Playfair Display', serif;
+  margin-top:250px;
+}
+
+.wed-hero p {
+  font-size: 18px;
+  opacity: 0.9;
+  margin-top:20px;
+}
+
+/* INTRO */
+.intro {
+  padding: 80px 120px;
+  text-align: center;
+}
+
+.intro h2 {
+  font-size: 34px;
+  color: #d6336c;
+  margin-bottom: 20px;
+  font-family: 'Playfair Display', serif;
+}
+
+.intro p {
+  max-width: 800px;
+  margin: 10px auto;
+  color: #555;
+  line-height: 1.8;
+}
+
+/* SERVICES */
+.services {
+  padding: 80px 100px;
+  background: #fff0f5;
+  text-align: center;
+}
+
+.services h2 {
+  font-size: 32px;
+  margin-bottom: 40px;
+  color: #d6336c;
+  font-family: 'Playfair Display', serif;
+}
+
+.service-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+
+.card {
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  transition: 0.3s;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+.card:hover {
+  transform: translateY(-8px);
+}
+
+.card h3 {
+  margin-bottom: 10px;
+  color: #d6336c;
+}
+
+.card p {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* EVENTS (NEW SECTION) */
+.events {
+  padding: 70px 100px;
+  text-align: center;
+  background: #fff;
+}
+
+.events h2 {
+  font-size: 32px;
+  color: #d6336c;
+  margin-bottom: 30px;
+  font-family: 'Playfair Display', serif;
+}
+
+.event-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.event-list div {
+  background: #ffe4ec;
+  padding: 12px 20px;
+  border-radius: 30px;
+  font-size: 15px;
+  color: #d6336c;
+  transition: 0.3s;
+}
+
+.event-list div:hover {
+  background: #d6336c;
+  color: #fff;
+}
+
+/* PROCESS */
+.process {
+  padding: 80px 100px;
+  background: #fafafa;
+  text-align: center;
+}
+
+.process h2 {
+  font-size: 32px;
+  margin-bottom: 40px;
+  color: #d6336c;
+  font-family: 'Playfair Display', serif;
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.steps div {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  transition: 0.3s;
+}
+
+.steps div:hover {
+  transform: translateY(-5px);
+}
+
+.steps h3 {
+  color: #d6336c;
+  margin-bottom: 10px;
+}
+
+.steps p {
+  font-size: 14px;
+  color: #555;
+}
+
+/* GALLERY */
+.gallery {
+  padding: 80px 100px;
+  text-align: center;
+}
+
+.gallery h2 {
+  font-size: 32px;
+  margin-bottom: 30px;
+  color: #d6336c;
+  font-family: 'Playfair Display', serif;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.05);
+}
+
+/* TESTIMONIAL */
+.testimonial {
+  padding: 70px 100px;
+  background: #fff0f5;
+  text-align: center;
+}
+
+.testimonial h2 {
+  font-size: 32px;
+  margin-bottom: 30px;
+  color: #d6336c;
+  font-family: 'Playfair Display', serif;
+}
+
+.testimonial-box {
+  max-width: 600px;
+  margin: auto;
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.testimonial-box p {
+  font-style: italic;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.testimonial-box h4 {
+  color: #d6336c;
+}
+
+/* CTA */
+.cta {
+  padding: 80px 20px;
+  text-align: center;
+  background: #d6336c;
+  color: #fff;
+}
+
+.cta h2 {
+  font-size: 32px;
+  margin-bottom: 15px;
+  font-family: 'Playfair Display', serif;
+}
+
+.cta p {
+  margin-bottom: 20px;
+}
+
+.contact-btn {
+  background: #fff;
+  color: #d6336c;
+  border: none;
+  padding: 12px 25px;
+  font-size: 15px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.contact-btn:hover {
+  background: #ffe4ec;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .service-cards,
+  .steps,
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .intro,
+  .services,
+  .events,
+  .process,
+  .gallery,
+  .testimonial {
+    padding: 60px 40px;
+  }
+}
+
+@media (max-width: 600px) {
+  .service-cards,
+  .steps,
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .wed-hero h1 {
+    font-size: 28px;
+  }
+}

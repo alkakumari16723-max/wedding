@@ -194,8 +194,53 @@ function Jaipur() {
           </div>
         </div>
       )}
+      {/* GALLERY */}
+<section className="gallery">
+  <h2>Wedding Gallery</h2>
+
+  <div className="gallery-grid">
+    <img src={jg1} alt="Jaipur Wedding 1" />
+    <img src={jg2} alt="Jaipur Wedding 2" />
+    <img src={jg3} alt="Jaipur Wedding 3" />
+    <img src={jg4} alt="Jaipur Wedding 4" />
+    <img src={jg5} alt="Jaipur Wedding 5" />
+    <img src={jg6} alt="Jaipur Wedding 6" />
+    <img src={jg7} alt="Jaipur Wedding 7" />
+    <img src={jg8} alt="Jaipur Wedding 8" />
+  </div>
+</section>
+
+{/* WHY CHOOSE JAIPUR */}
+<section className="why">
+  <h2>Why Choose Jaipur?</h2>
+
+  <div className="why-grid">
+
+    <div className="why-card">
+      <h3> Royal Palaces </h3>
+      <p>Get married in grand palaces with regal architecture and heritage charm.</p>
+    </div>
+
+    <div className="why-card">
+      <h3> Heritage Experience </h3>
+      <p>Experience traditional Rajasthani culture with royal hospitality.</p>
+    </div>
+
+    <div className="why-card">
+      <h3> Perfect for Big Weddings </h3>
+      <p>Spacious venues ideal for lavish multi-day wedding celebrations.</p>
+    </div>
+
+    <div className="why-card">
+      <h3> Luxury & Elegance </h3>
+      <p>From elephant entries to royal décor, make your wedding truly majestic.</p>
+    </div>
+
+  </div>
+</section>
 
     </div>
+    
   );
 }
 

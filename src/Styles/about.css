@@ -15,21 +15,23 @@
 .about-overlay {
   height: 100%;
   width: 100%;
-  background: rgba(0,0,0,0.5);
+  background: rgba(4, 4, 4, 0.5);
   color: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding-bottom: 70px;
 }
 
 .about-overlay h1 {
   font-size: 50px;
+  margin-bottom: 10px;
 }
 
 .about-overlay p {
   font-size: 18px;
-  margin-top: 10px;
+  margin-bottom:10px;
 }
 
 /* INTRO */
@@ -38,6 +40,7 @@
   padding: 60px;
   gap: 40px;
   align-items: center;
+  background-color: #fff0f5;
 }
 
 .about-text {
@@ -47,6 +50,7 @@
 .about-text h2 {
   font-size: 32px;
   margin-bottom: 15px;
+  color:#d6336c
 }
 
 .about-img img {
@@ -186,12 +190,16 @@
   display: flex;
   justify-content: space-around;
   padding: 60px;
-  background: #fff5f7;
+  background:rgb(243, 175, 175) ;
 }
 
 .stat h3 {
   font-size: 30px;
-  color: #d6336c;
+  color: white;
+}
+.stat p {
+  font-size: 16px;
+  color: white;
 }
 
 /* CTA */

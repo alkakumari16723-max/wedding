@@ -45,7 +45,7 @@ function Contact() {
         <p><strong>🕒 Timing:</strong> Mon–Sat (10 AM – 7 PM)</p>
 
         <a
-          href="https://wa.me/919876543210"
+          href="https://wa.me/917009108705?text=Hello%2C%20I%20am%20interested%20in%20your%20wedding%20planning%20services.%20Please%20share%20details%20%F0%9F%92%8D"
           target="_blank"
           rel="noreferrer"
           className="whatsapp-btn"
