@@ -45,10 +45,7 @@ function App() {
         <Route path="/services/reception" element={<Reception />} />
         <Route path="/mumbai" element={<Mumbai />} />
         <Route path="/payment" element={<Payment />} />
-          <Route
-        path="/ai-wedding-generator"
-        element={<AiWeddingGenerator />}
-      />
+    
       </Routes>
 
       <Footer />   
