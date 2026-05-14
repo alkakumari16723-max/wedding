@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Swal from "sweetalert2";
 
 function ContactForm() {
   const [formData, setFormData] = useState({
@@ -9,19 +10,18 @@ function ContactForm() {
   });
 
   const [errors, setErrors] = useState({});
+  const [loading, setLoading] = useState(false); // ✅ added
 
   // 🔹 validation function
   const validate = () => {
     let newErrors = {};
 
-    // Name
     if (!formData.name.trim()) {
       newErrors.name = "Name is required";
     } else if (formData.name.length < 3) {
       newErrors.name = "Name must be at least 3 characters";
     }
 
-    // Email
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!formData.email) {
       newErrors.email = "Email is required";
@@ -29,15 +29,13 @@ function ContactForm() {
       newErrors.email = "Invalid email format";
     }
 
-    // Phone
     const phoneRegex = /^[6-9]\d{9}$/;
     if (!formData.phone) {
       newErrors.phone = "Phone number is required";
     } else if (!phoneRegex.test(formData.phone)) {
-      newErrors.phone = "Enter valid 10-digit phone number";
+      newErrors.phone = "Enter valid phone number";
     }
 
-    // Message
     if (!formData.message.trim()) {
       newErrors.message = "Message is required";
     } else if (formData.message.length < 10) {
@@ -54,16 +52,17 @@ function ContactForm() {
       [e.target.name]: e.target.value,
     });
 
-    // remove error while typing
     setErrors({
       ...errors,
       [e.target.name]: "",
     });
   };
 
-  // 🔹 submit
+  // 🔹 submit (FIXED)
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (loading) return; // ❗ prevent multiple clicks
 
     const validationErrors = validate();
 
@@ -72,36 +71,59 @@ function ContactForm() {
       return;
     }
 
-    const res = await fetch("http://localhost:5000/api/contact", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formData),
-    });
+    setLoading(true); // start loading
 
-    const data = await res.json();
-
-    if (data.success) {
-      alert("Message Sent ✅");
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        message: "",
+    try {
+      const res = await fetch("http://localhost:5000/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
       });
-      setErrors({});
-    } else {
-      alert(data.message || "Error ❌");
+
+      const data = await res.json();
+
+      if (data.success) {
+        await Swal.fire({
+          icon: "success",
+          title: "Message Sent!",
+          text: "We will contact you soon 💍",
+          confirmButtonColor: "#e48b8b",
+        });
+
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          message: "",
+        });
+
+        setErrors({});
+      } else {
+        Swal.fire({
+          icon: "error",
+          title: "Error",
+          text: data.message || "Something went wrong",
+        });
+      }
+
+    } catch (error) {
+      Swal.fire({
+        icon: "error",
+        title: "Server Error",
+        text: "Server not responding ❌",
+      });
+    } finally {
+      setLoading(false); // stop loading
     }
   };
 
   return (
     <div style={{ padding: "20px", maxWidth: "400px" }}>
-      <h2 style={{color:"rgb(234, 143, 143)"}}>Contact Us 💍</h2>
+      <h2 style={{ color: "rgb(234, 143, 143)" }}>Contact Us 💍</h2>
 
       <form onSubmit={handleSubmit}>
-        {/* Name */}
         <input
           name="name"
           placeholder="Your Name"
@@ -111,7 +133,6 @@ function ContactForm() {
         {errors.name && <p style={{ color: "red" }}>{errors.name}</p>}
         <br />
 
-        {/* Email */}
         <input
           name="email"
           type="email"
@@ -122,7 +143,6 @@ function ContactForm() {
         {errors.email && <p style={{ color: "red" }}>{errors.email}</p>}
         <br />
 
-        {/* Phone */}
         <input
           name="phone"
           placeholder="Phone Number"
@@ -132,7 +152,6 @@ function ContactForm() {
         {errors.phone && <p style={{ color: "red" }}>{errors.phone}</p>}
         <br />
 
-        {/* Message */}
         <textarea
           name="message"
           placeholder="Your Message"
@@ -142,7 +161,10 @@ function ContactForm() {
         {errors.message && <p style={{ color: "red" }}>{errors.message}</p>}
         <br />
 
-        <button type="submit">Send Message</button>
+        {/* ✅ FIXED BUTTON */}
+        <button type="submit" disabled={loading}>
+          {loading ? "Sending..." : "Send Message"}
+        </button>
       </form>
     </div>
   );

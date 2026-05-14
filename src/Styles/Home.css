@@ -1,59 +1,66 @@
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body {
-  font-family: Arial, sans-serif;
+html, body {
+  width: 100%;
   overflow-x: hidden;
-
+  font-family: Arial, sans-serif;
 }
 
 #root {
   width: 100%;
 }
+
+section, .services, .recent-events, .reviews, .wedding-slogan {
+  width: 100%;
+}
+
 .home {
   text-align: center;
   color: white;
   width: 100%;
   position: relative;
-   height: 500px;  /* ✅ VERY IMPORTANT */
+  height: 70vh;   
+  min-height: 400px;
+  overflow: hidden;
 }
-.home-content {
-  position: absolute;   /* ✅ important */
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);  /* perfect center */
-  z-index: 2;
-  text-align: center;
-  color: white;
+
+.home video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
 }
 
 .home::after {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.4);  /* dark overlay */
+  inset: 0;
+  background: rgba(0,0,0,0.4);
   z-index: 1;
 }
 
-.home video {
+.home-content {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  text-align: center;
+  padding: 0 15px;
   width: 100%;
-  height: 600px;  /* ✅ VERY IMPORTANT */
-  object-fit: cover;
-  z-index: -1;
+  max-width: 600px;
 }
+
 .home h1 {
   font-size: 40px;
-  margin-bottom: 40px;
-  color:white;
+  margin-bottom: 20px;
 }
 
 .home p {
@@ -70,256 +77,221 @@ body {
   backdrop-filter: blur(5px);
   cursor: pointer;
 }
+.btn :hover{
+  background-color: #7b4d5b;
+}
+
+
 
 .wedding-slogan {
   text-align: center;
-  padding: 80px 20px;
-  background: linear-gradient(to right, #fff0f5, #ffe4ec);
-  position: relative;
-  overflow: hidden;
+  padding: 120px 15px 50px;  /* 👈 reduced */
+  background: #fff0f5;
+   font-family: 'Great Vibes', cursive;
+   letter-spacing: 1px;
+  
+  
 }
 
-/* Heading - Premium Gradient Text */
 .wedding-slogan h2 {
-  font-size: 42px;
-  font-weight: 700;
-  font-family: 'Playfair Display', serif;
-  background: linear-gradient(to right, #ff4d6d, #ff758c, #ffb6c1);
+  font-size: 37px;
+  background: rgb(171, 79, 79);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  margin-bottom: 15px;
-  letter-spacing: 3px;
-  animation: fadeIn 1.5s ease-in-out;
+   font-family: 'Nunito', sans-serif;
+  
 }
 
-/* Paragraph - Soft Elegant */
 .wedding-slogan p {
-  font-size: 19px;
-  color: #444;
-  max-width: 650px;
-  margin: 0 auto 25px;
-  line-height: 1.8;
-  font-family: 'Poppins', sans-serif;
-  animation: fadeIn 2s ease-in-out;
+  font-size: 23px;
+  max-width: 600px;
+  margin: 10px auto;
+  color:rgb(186, 111, 111);
+  margin-top: 20px;
 }
 
-/* Divider line - Glow Effect */
-.divider {
-  width: 140px;
-  height: 4px;
-  margin: 20px auto;
-  background: linear-gradient(to right, #ff758c, #ff4d6d);
-  border-radius: 10px;
-  position: relative;
-  box-shadow: 0 0 10px #ff758c;
-}
-
-/* Decorative flowers upgraded */
-.divider::before,
-.divider::after {
-  content: "🌸";
-  position: absolute;
-  top: -14px;
-  font-size: 20px;
-  animation: float 3s infinite ease-in-out;
-}
-
-.divider::before {
-  left: -40px;
-}
-
-.divider::after {
-  right: -40px;
-}
-
-/* Floating animation */
-@keyframes float {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-6px); }
-  100% { transform: translateY(0px); }
-}
-
-/* Fade animation */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(25px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 
 .services {
-  padding: 60px 20px;
+  padding: 20px 15px 50px ;
   text-align: center;
-  background: #f9f9f9;
+  background: #fff0f5;
 }
 
 .services h2 {
-  font-size: 32px;
-  margin-bottom: 40px;
-  color: black;
-
+  font-size: 30px;
+  margin-bottom: 30px;
+  color:rgb(195, 100, 100)
 }
 
-/* GRID */
 .service-grid {
   display: grid;
-  grid-template-columns: repeat(4,1fr);
-  gap: 25px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  width: 100%;
 }
 
-/* CARD */
+
 .service-card {
   background: white;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
   transition: 0.3s;
-  height: 100%; /* equal height */
+  width: 100%;
+  max-width: 620px;
+  margin: auto;
 }
 
+.service-card h3{
+  color:rgb(186, 111, 111)
+}
 .service-card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-6px);
 }
 
-/* IMAGE */
 .service-card img {
   width: 100%;
   height: 180px;
   object-fit: cover;
 }
 
-/* TEXT */
-.service-card h3 {
-  margin: 15px 0 10px;
-  font-size: 20px;
-}
 
-.service-card p {
-  padding: 0 15px 20px;
-  font-size: 14px;
-  color: #555;
-}
-
-
-/* RECENT EVENTS SECTION */
 .recent-events {
-  padding: 60px 80px;
+  padding: 70px 20px;
   text-align: center;
-  background: #fff;
-  gap:30px;
-  width:100%;
-
-
+  background:#f9f0f5;  
 }
 
 .recent-events h2 {
-  font-size: 32px;
-  margin-bottom: 30px;
-  font-family: 'Playfair Display', serif;
-  color: #d6336c;
-  margin-top: 0%;
-  
+  font-size: 34px;
+  margin-bottom: 40px;
+  color:rgb(195, 100, 100);
+  font-weight: 600;
 }
 
-/* GRID: 4-4 layout */
+/* GRID */
 .event-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  
+  gap: 25px;
 }
 
-/* CARD */
 .event-card {
   position: relative;
   overflow: hidden;
-  border-radius: 12px;
-  cursor: pointer;
-  width:100%;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.event-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+/* IMAGE */
 .event-card img {
   width: 100%;
   height: 220px;
   object-fit: cover;
-  transition: 0.4s;
-  gap:20px;
+  transition: transform 0.4s ease;
 }
 
-/* HOVER ZOOM */
 .event-card:hover img {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
-/* OVERLAY (Couple Name) */
 .event-overlay {
   position: absolute;
   bottom: 0;
   width: 100%;
-  padding: 12px;
-  background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+  padding: 15px;
   color: #fff;
-  font-size: 18px;
-  font-weight: 600;
-  text-align: center;
-  font-family: 'Poppins', sans-serif;
+
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.75),
+    rgba(0, 0, 0, 0.1)
+  );
 }
 
-/* REVIEW SECTION */
+.event-overlay h3 {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.event-overlay p {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+
 .reviews {
-  padding: 70px 20px;
+  padding: 60px 15px;
   background: #fff0f5;
   text-align: center;
 }
+.reviews h2{
+  color:rgb(195, 100, 100);
+  font-size:34px;
+  margin-bottom: 30px;
 
-.reviews h2 {
-  font-size: 32px;
-  margin-bottom: 40px;
-  font-family: 'Playfair Display', serif;
-  color: #d6336c;
 }
 
-/* FLEX LAYOUT */
 .review-container {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 40px;
   flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
 }
 
-/* LEFT TEXT */
-.review-text {
-  flex: 1;
-  max-width: 400px;
-  text-align: left;
-}
-
-.review-text p {
-  font-size: 18px;
-  line-height: 1.6;
-  color: #444;
-}
-
-.review-text h3 {
-  margin-top: 10px;
-  color: #ff4d6d;
-}
-
-/* RIGHT IMAGE */
+.review-text,
 .review-image {
   flex: 1;
+  min-width: 280px;
   max-width: 400px;
+  color:rgb(171, 79, 79)
 }
 
 .review-image img {
   width: 100%;
-  height: 260px;
+  height: 240px;
   object-fit: cover;
   border-radius: 15px;
-  transition: 0.5s;
+}
+
+
+
+@media (max-width: 992px) {
+  .service-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .event-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .home {
+    height: 50vh;
+  }
+
+  .home h1 {
+    font-size: 24px;
+  }
+
+  .home p {
+    font-size: 14px;
+  }
+
+  .service-grid,
+  .event-grid {
+    grid-template-columns: 1fr;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
 }

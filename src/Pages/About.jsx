@@ -3,6 +3,7 @@ import aboutImg from "../assets/about.jpg";
 import founder1 from "../assets/founder1.jpg";
 import founder2 from "../assets/founder2.jpg";
 import contactForm from "./Contactform";
+import aboutImg2 from "../assets/about2.avif";
 
 function About() {
   return (
@@ -10,6 +11,10 @@ function About() {
 
       {/* HERO SECTION */}
       <div className="about-hero">
+
+  <img src={aboutImg2} alt="about" className="hero-img" />
+
+
         <div className="about-overlay">
           <h1>About Us 💍</h1>
           <p>Crafting Dream Weddings with Love & Elegance</p>

@@ -1,19 +1,11 @@
-/* GOOGLE FONT (add in index.html) */
-/* <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet"> */
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
+/* PAGE */
 .prewedding-page {
-  font-family: 'Poppins', sans-serif;
-  color: #333;
+  font-family: "Poppins", sans-serif;
   background: #f8f8f8;
+  overflow-x: hidden;
 }
 
-/* HERO SECTION */
+/* ================= HERO ================= */
 .pre-hero {
   position: relative;
   height: 90vh;
@@ -33,150 +25,104 @@
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  color: #fff;
-  max-width: 700px;
-
+  color: white;
+  width: 100%;
+  padding: 0 15px;
 }
 
 .overlay h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 55px;
-  margin-bottom: 15px;
-  letter-spacing: 3px;
-   white-space: nowrap;
+  font-size: 52px;
+  font-family: "Playfair Display", serif;
 }
 
 .overlay p {
   font-size: 18px;
-  opacity: 0.9;
+  margin-top: 10px;
 }
-
-/* GENERAL SECTION STYLING */
+.intro h2{
+  color:rgb(230, 125,125)
+}
+.experience h2{
+  color:rgb(230,125,125)
+}
 section {
   padding: 80px 10%;
   text-align: center;
 }
 
 section h2 {
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-size: 36px;
   margin-bottom: 20px;
-  color: #111;
+  color:rgb(153, 64, 64)
 }
 
 section p {
   max-width: 750px;
-  margin: 10px auto;
-  line-height: 1.8;
-  font-size: 16px;
+  margin: auto;
   color: #555;
+  line-height: 1.7;
 }
 
-/* INTRO */
-.intro {
-  background: #fafafa;
-}
-
-/* EXPERIENCE */
-.experience {
-  background: #fff;
-}
-
-/* SERVICES */
-.services {
-  background: #fafafa;
-}
-
+/* ================= SERVICE ================= */
 .service-cards {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 25px;
-  margin-top: 40px;
+  gap: 20px;
+  margin-top: 30px;
 }
 
-.card {
-  background: #fff;
-  padding: 30px;
+.service-card {
+  background: white;
+  padding: 25px;
   border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
   transition: 0.3s ease;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
 }
 
-.card:hover {
-  transform: translateY(-10px);
+.service-card:hover {
+  transform: translateY(-5px);
 }
 
-.card h3 {
-  margin-bottom: 10px;
-  font-size: 20px;
-}
-
-.card p {
-  font-size: 14px;
-}
-
-/* PROCESS */
-.process {
-  background: #fff;
-}
-
+/* ================= PROCESS ================= */
 .steps {
   display: flex;
-  justify-content: space-between;
-  margin-top: 40px;
+  flex-wrap: wrap;
   gap: 20px;
+  justify-content: space-between;
 }
 
 .steps div {
   flex: 1;
-  text-align: left;
+  min-width: 200px;
 }
 
-.steps h3 {
-  font-size: 18px;
-  margin-bottom: 10px;
-  color: #111;
-}
-
-.steps p {
-  font-size: 14px;
-}
-
-/* GALLERY */
-.gallery {
-  background: #fafafa;
-}
-
-.gallery-text {
-  margin-bottom: 30px;
-  font-style: italic;
-}
-
-.gallery-grid {
+/* ================= 🔥 FIXED GALLERY ================= */
+.prewedding-page .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 15px;
 }
 
-.gallery-grid img {
+.prewedding-page .gallery-img {
+  height: 240px;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.prewedding-page .gallery-img img {
   width: 100%;
-  height: 250px;
+  height: 100%;
   object-fit: cover;
-  border-radius: 10px;
-  transition: 0.4s ease;
+  display: block;
+  transition: transform 0.4s ease;
 }
 
-.gallery-grid img:hover {
-  transform: scale(1.05);
+.prewedding-page .gallery-img:hover img {
+  transform: scale(1.08);
 }
 
-/* TESTIMONIAL */
-.testimonial {
-  padding: 60px 20px;
-  text-align: center;
-  background: #fff;
-}
-
+/* ================= TESTIMONIAL ================= */
 .testimonial-box {
   max-width: 600px;
   margin: 20px auto;
@@ -186,29 +132,10 @@ section p {
   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
-.testimonial-box p {
-  font-size: 16px;
-  font-style: italic;
-  color: #555;
-}
-
-.testimonial-box h4 {
-  margin-top: 10px;
-  color: #d6336c;
-}
-
-/* CTA */
+/* ================= CTA ================= */
 .cta {
   background: #ff4d6d;
-  color: #fff;
-}
-
-.cta h2 {
-  color: #fff;
-}
-
-.cta p {
-  color: #ffe5ea;
+  color: white;
 }
 
 .contact-btn {
@@ -217,25 +144,17 @@ section p {
   padding: 12px 25px;
   border: none;
   border-radius: 30px;
-  font-size: 16px;
   cursor: pointer;
-  transition: 0.3s;
 }
 
-.contact-btn:hover {
-  background: #1ebe5d;
-  transform: scale(1.05);
-}
-
-
-/* RESPONSIVE */
+/* ================= RESPONSIVE ================= */
 @media (max-width: 992px) {
-  .service-cards {
-    grid-template-columns: repeat(2, 1fr);
+  .overlay h1 {
+    font-size: 40px;
   }
 
-  .gallery-grid {
-    grid-template-columns: repeat(2, 1fr);
+  section {
+    padding: 60px 8%;
   }
 
   .steps {
@@ -245,18 +164,30 @@ section p {
 
 @media (max-width: 600px) {
   .overlay h1 {
-    font-size: 32px;
+    font-size: 26px;
+  }
+
+  .overlay p {
+    font-size: 14px;
   }
 
   section {
-    padding: 60px 20px;
+    padding: 50px 20px;
   }
 
+  
+  .gallery-img {
+    height: 220px;
+  }
+}
+@media (max-width: 992px) {
   .service-cards {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
   }
+}
 
-  .gallery-grid {
+@media (max-width: 600px) {
+  .service-cards {
     grid-template-columns: 1fr;
   }
 }

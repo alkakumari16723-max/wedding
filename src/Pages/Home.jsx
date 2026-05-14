@@ -77,18 +77,15 @@ import BookingForm from "./BookingForm";
       </div> {/* ✅ CLOSE HOME HERE */}
 
 
-      {/* SLOGAN */}
-      <div className="wedding-slogan">
-        <h2>✨ WE PLAN YOU CELEBRATE LOVE ✨</h2>
-        <p>
-          Crafting magical moments, unforgettable celebrations, and love stories
-          that last a lifetime 💕
-        </p>
-        <div className="divider"></div>
-      </div>
+  <div className="wedding-slogan">
+  <h2>We Create Magic, You Celebrate Love ✨</h2>
+  <p>
+    Turning your dream wedding into a timeless story filled with elegance,
+    emotions, and unforgettable moments 💕
+  </p>
+</div>
 
-
-      {/* SERVICES */}
+    {/* SERVICES */}
       <div className="services">
         <h2>Our Services</h2>
 

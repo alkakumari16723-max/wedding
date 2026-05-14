@@ -37,7 +37,7 @@ function Jaipur() {
         style={{ backgroundImage: `url(${jaipurHero})` }}
       >
         <div className="overlay">
-          <h1>Jaipur Royal Wedding 👑</h1>
+          <h1>Jaipur Royal Wedding </h1>
           <p>Palace • Royal • Luxury</p>
 
           {/* ✅ FIXED */}
@@ -127,7 +127,6 @@ function Jaipur() {
 
           {/* GOLD */}
           <div className="package popular">
-            <div className="badge">Most Popular</div>
             <img src={jl2} alt="Gold Package" />
             <div className="package-content">
               <h3>Gold Package</h3>

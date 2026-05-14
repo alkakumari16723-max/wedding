@@ -1,84 +1,79 @@
 /* TOP SECTION WITH BG */
 .contact-top {
-  height: 80vh;
+  min-height: 80vh;
   width: 100%;
-  background: url("../assets/contact-bg.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background: url("../assets/contact-bg.jpg") center/cover no-repeat;
+  position: relative;
 }
+
 /* OVERLAY */
 .contact-overlay {
-  height: 100%;
+  min-height: 80vh;
   width: 100%;
-  opacity: 0.8;
-
-  position: relative;
+  background: rgba(33, 32, 32, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 40px 80px;
+  gap: 40px;
+  flex-wrap: wrap;
 }
 
-/* 🔥 HEADING CENTER TOP */
+/* TEXT SECTION */
 .contact-text {
-  position: absolute;
-  top: 40px;
-  left: 50%;
-  transform: translateX(-50%);
+  flex: 1;
+  min-width: 280px;
   text-align: center;
-  color: black;
-
-  pointer-events: none;   /* 🔥 MOST IMPORTANT FIX */
+  color: #000;
 }
-
 
 .contact-text h1 {
   font-size: 45px;
   font-weight: bold;
-  color: #000;
-  padding-top: 180px;
+  color:white;
 }
 
 .contact-text p {
   margin-top: 10px;
   font-size: 18px;
-  font-weight: bold;
-  color: black;
-  padding-bottom: 50px;
+  font-weight: 500;
+  color:azure;
 }
 
-
-/* RIGHT FORM */
+/* FORM BOX */
 .contact-form-box {
   background: white;
   padding: 30px;
   border-radius: 10px;
   width: 420px;
-  height: 530px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-  margin-bottom: 70px;
-  margin-top: 10px;
-
+  max-width: 100%;
+  min-height: 450px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
 }
 
 /* BOTTOM SECTION */
 .contact-bottom {
-  padding: 50px 40px;
+  padding: 50px 20px;
   text-align: center;
+  background-color: rgb(186, 148, 151);
+  color:white;
 }
 
 .contact-bottom h3 {
   margin-bottom: 20px;
+
 }
 
 .contact-bottom p {
   margin: 8px 0;
 }
 
-/* WHATSAPP */
+/* WHATSAPP BUTTON */
 .whatsapp-btn {
   display: inline-block;
   margin-top: 15px;
-  background: #25D366;
-  color: white;
+  background:rgba(189, 87, 104, 0.916);
+  color:white;
   padding: 10px 15px;
   border-radius: 6px;
   text-decoration: none;
@@ -86,9 +81,47 @@
 
 /* MAP */
 .map {
-  margin-top: 10px;
- width: 100%;
-  height: 210px;
+  width: 100%;
+  height: 250px;
   border: none;
-  margin-bottom: none;
+  margin-top: 10px;
+}
+
+/* ================= RESPONSIVE ================= */
+
+/* TABLET */
+@media (max-width: 992px) {
+  .contact-overlay {
+    padding: 40px 30px;
+    gap: 30px;
+  }
+
+  .contact-text h1 {
+    font-size: 36px;
+  }
+
+  .contact-text p {
+    font-size: 16px;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .contact-overlay {
+    flex-direction: column;
+    padding: 30px 20px;
+    text-align: center;
+  }
+
+  .contact-text h1 {
+    font-size: 28px;
+  }
+
+  .contact-text p {
+    font-size: 14px;
+  }
+
+  .contact-form-box {
+    width: 100%;
+  }
 }

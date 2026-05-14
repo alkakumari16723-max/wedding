@@ -46,43 +46,43 @@
 }
 
 /* SERVICES */
-.services {
+.reception-page services {
   padding: 80px 100px;
   text-align: center;
 }
 
-.service-cards {
+.reception-page service-cards {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 25px;
 }
 
-.card {
+.reception-page card {
   background: #1a1a1a;
   padding: 25px;
   border-radius: 12px;
   transition: 0.3s;
 }
 
-.card:hover {
+.reception-page card:hover {
   transform: translateY(-8px);
 }
 
 
 
 /* GALLERY */
-.gallery {
+.reception-page gallery {
   padding: 80px;
   text-align: center;
 }
 
-.gallery-grid {
+.reception-page gallery-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 15px;
 }
 
-.gallery-grid img {
+.reception-page gallery-grid img {
   width: 100%;
   border-radius: 10px;
 }

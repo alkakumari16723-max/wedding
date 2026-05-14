@@ -10,10 +10,7 @@ function Payment() {
 
   const [loading, setLoading] = useState(false);
 
-  if (!booking) {
-    return <h2 style={{ textAlign: "center" }}>No booking found ❌</h2>;
-  }
-
+  // Load Razorpay script
   const loadRazorpay = () => {
     return new Promise((resolve) => {
       if (window.Razorpay) return resolve(true);
@@ -27,99 +24,98 @@ function Payment() {
   };
 
   const handlePayment = async () => {
+    if (!booking) {
+      alert("No booking found");
+      return;
+    }
+
     setLoading(true);
 
     try {
-      // 🔹 Load Razorpay
-      const resScript = await loadRazorpay();
-      if (!resScript) {
-        alert("Razorpay SDK failed to load ❌");
+      // 1. Load Razorpay SDK
+      const isLoaded = await loadRazorpay();
+
+      if (!isLoaded) {
+        alert("Razorpay SDK failed to load");
         setLoading(false);
         return;
       }
 
-      // 🔹 Create order
-      const { data } = await axios.post(
+      // 2. Create Order from backend
+      const { data: order } = await axios.post(
         "http://localhost:5000/api/create-order",
-        { amount: 5000 }
+        {
+          amount: 500, // change dynamic later
+        }
       );
 
-      if (!data || !data.id) {
-        alert("Order creation failed ❌");
-        setLoading(false);
-        return;
-      }
-
+      // 3. Razorpay Options
       const options = {
-        key: "rzp_test_ShjcM28TxDs1PB", // ✅ your real key
-        amount: data.amount,
-        currency: "INR",
-        name: "Dream Wedding 💍",
-        description: "Wedding Booking Payment",
-        order_id: data.id,
+        key: "rzp_test_SlBZZUec7P4naT",
+        amount: order.amount,
+        currency: order.currency,
+        name: "Wedding Booking 💍",
+        description: "Booking Payment",
+        order_id: order.id,
 
         handler: async function (response) {
           try {
             const verifyRes = await axios.post(
               "http://localhost:5000/api/verify-payment",
               {
-                ...response,              // 🔥 IMPORTANT FIX
-                bookingId: booking._id
+                razorpay_order_id: response.razorpay_order_id,
+                razorpay_payment_id: response.razorpay_payment_id,
+                razorpay_signature: response.razorpay_signature,
+                bookingId: booking._id,
               }
             );
 
             if (verifyRes.data.success) {
-              alert("Payment Successful ✅");
+              alert("Payment Successful 🎉");
               navigate("/success");
             } else {
-              alert("Payment Failed ❌");
+              alert("Payment Verification Failed ❌");
             }
-
           } catch (err) {
             console.log(err);
-            alert("Payment verification failed ❌");
-          }
-        },
-
-        modal: {
-          ondismiss: function () {
-            alert("Payment cancelled ❌");
+            alert("Verification error ❌");
           }
         },
 
         prefill: {
           name: booking.name,
           email: booking.email,
-          contact: booking.phone
+          contact: booking.phone,
         },
 
         theme: {
-          color: "#d6336c"
-        }
+          color: "#d6336c",
+        },
       };
 
-      const paymentObject = new window.Razorpay(options);
-      paymentObject.open();
+      const rzp = new window.Razorpay(options);
+      rzp.open();
 
     } catch (err) {
-      console.log(err.response?.data || err.message);
+      console.log(err);
       alert("Payment failed ❌");
     }
 
     setLoading(false);
   };
 
+  if (!booking) {
+    return <h2 style={{ textAlign: "center" }}>No booking found ❌</h2>;
+  }
+
   return (
     <div className="payment-page">
       <div className="payment-box">
         <h2>Complete Payment 💳</h2>
 
-        <div className="booking-info">
-          <p><strong>Name:</strong> {booking.name}</p>
-          <p><strong>Email:</strong> {booking.email}</p>
-          <p><strong>Phone:</strong> {booking.phone}</p>
-          <p><strong>Date:</strong> {booking.weddingDate}</p>
-        </div>
+        <p><strong>Name:</strong> {booking.name}</p>
+        <p><strong>Email:</strong> {booking.email}</p>
+        <p><strong>Phone:</strong> {booking.phone}</p>
 
         <button onClick={handlePayment} disabled={loading}>
           {loading ? "Processing..." : "Pay Now"}

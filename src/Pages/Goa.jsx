@@ -26,6 +26,7 @@ function Goa() {
   const navigate = useNavigate();
   return (
     <div className="goa-page">
+        <img src={goaHero} className="hero-img" />
 
       {/* HERO */}
       <div className="hero">
@@ -162,14 +163,39 @@ function Goa() {
   <h2>Wedding Gallery</h2>
 
   <div className="gallery-grid">
-    <img src={g1} alt="wedding1" />
-    <img src={g2} alt="wedding2" />
-    <img src={g3} alt="wedding3" />
-    <img src={g4} alt="wedding4" />
-    <img src={g5} alt="wedding5" />
-    <img src={g6} alt="wedding6" />
-    <img src={g7} alt="wedding7" />
-    <img src={g8} alt="wedding8" />
+
+    <div className="gallery-img">
+      <img src={g1} alt="wedding1" />
+    </div>
+
+    <div className="gallery-img">
+      <img src={g2} alt="wedding2" />
+    </div>
+
+    <div className="gallery-img">
+      <img src={g3} alt="wedding3" />
+    </div>
+
+    <div className="gallery-img">
+      <img src={g4} alt="wedding4" />
+    </div>
+
+    <div className="gallery-img">
+      <img src={g5} alt="wedding5" />
+    </div>
+
+    <div className="gallery-img">
+      <img src={g6} alt="wedding6" />
+    </div>
+
+    <div className="gallery-img">
+      <img src={g7} alt="wedding7" />
+    </div>
+
+    <div className="gallery-img">
+      <img src={g8} alt="wedding8" />
+    </div>
+
   </div>
 </section>
       {/* WHY CHOOSE */}

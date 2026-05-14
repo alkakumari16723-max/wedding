@@ -16,93 +16,134 @@ function BookingForm() {
     budget: "",
     services: "",
     location: "",
-    message: "",
-    paymentStatus: "Pending"
+    message: ""
   });
 
   const [errors, setErrors] = useState({});
 
-  // 🔹 handle input (with phone restriction)
+  // 🔹 INPUT CHANGE
   const handleChange = (e) => {
     const { name, value } = e.target;
 
-    // allow only numbers in phone
-    if (name === "phone") {
-      if (!/^\d*$/.test(value)) return;
-    }
+    if (name === "phone" && !/^\d*$/.test(value)) return;
 
-    setFormData({ ...formData, [name]: value });
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value
+    }));
 
-    // remove error while typing
-    setErrors({ ...errors, [name]: "" });
+    setErrors((prev) => ({
+      ...prev,
+      [name]: ""
+    }));
   };
 
-  // 🔹 checkbox
+  // 🔹 CHECKBOX
   const handleCheckbox = (e) => {
     const { value, checked } = e.target;
 
-    let updatedFunctions = checked
+    let updated = checked
       ? [...formData.functions, value]
       : formData.functions.filter((f) => f !== value);
 
-    setFormData({ ...formData, functions: updatedFunctions });
+    setFormData((prev) => ({
+      ...prev,
+      functions: updated
+    }));
 
-    if (updatedFunctions.length > 0) {
-      setErrors({ ...errors, functions: "" });
+    if (updated.length > 0) {
+      setErrors((prev) => ({
+        ...prev,
+        functions: ""
+      }));
     }
   };
 
-  // 🔹 validation
+  // 🔹 VALIDATION
   const validate = () => {
-    let newErrors = {};
+    let err = {};
 
-    if (!formData.name.trim()) {
-      newErrors.name = "Name is required";
-    }
+    if (!formData.name.trim()) err.name = "Name required";
 
-    if (!/^[6-9]\d{9}$/.test(formData.phone)) {
-      newErrors.phone = "Enter valid 10 digit Indian number";
-    }
+    if (!/^[6-9]\d{9}$/.test(formData.phone))
+      err.phone = "Invalid phone number";
 
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      newErrors.email = "Enter valid email";
-    }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email))
+      err.email = "Invalid email";
 
-    if (!formData.weddingDate) {
-      newErrors.weddingDate = "Select wedding date";
-    }
+    if (!formData.weddingDate) err.weddingDate = "Select date";
 
-    if (formData.functions.length === 0) {
-      newErrors.functions = "Select at least one function";
-    }
+    if (formData.functions.length === 0)
+      err.functions = "Select at least one function";
 
-    return newErrors;
+    return err;
   };
 
-  // 🔹 submit
+  // 🔥 SUBMIT (FIXED + SAFE FLOW)
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const validationErrors = validate();
-
-    if (Object.keys(validationErrors).length > 0) {
-      setErrors(validationErrors);
+    const err = validate();
+    if (Object.keys(err).length > 0) {
+      setErrors(err);
       return;
     }
 
     try {
-      const res = await axios.post(
-        "http://localhost:5000/api/book",
-        formData
+      // STEP 1: CREATE ORDER
+      const orderRes = await axios.post(
+        "http://localhost:5000/api/create-order",
+        {
+          amount: 1000 // change dynamic later
+        }
       );
 
-      alert("Booking Submitted! ✅");
+      const order = orderRes.data;
 
-      navigate("/payment", { state: { booking: res.data } });
+      // STEP 2: OPEN RAZORPAY
+      const options = {
+        key: "rzp_test_So2uo3dAeHTH77",
+        amount: order.amount,
+        currency: "INR",
+        name: "Wedding Booking",
+        description: "Booking Payment",
+        order_id: order.id,
 
-    } catch (err) {
-      console.log(err);
-      alert("Error submitting form");
+        handler: async function (response) {
+          try {
+            // STEP 3: SAVE BOOKING AFTER PAYMENT
+            const bookingRes = await axios.post(
+              "http://localhost:5000/api/book",
+              {
+                ...formData,
+                paymentStatus: "Paid",
+                paymentId: response.razorpay_payment_id,
+                orderId: order.id
+              }
+            );
+
+            alert("Payment Successful 🎉");
+
+            navigate("/payment-success", {
+              state: { booking: bookingRes.data }
+            });
+          } catch (error) {
+            console.log(error);
+            alert("Booking save failed after payment");
+          }
+        },
+
+        theme: {
+          color: "#ff4d6d"
+        }
+      };
+
+      const razor = new window.Razorpay(options);
+      razor.open();
+
+    } catch (error) {
+      console.log("Submit Error:", error);
+      alert("Something went wrong while creating order");
     }
   };
 
@@ -123,7 +164,6 @@ function BookingForm() {
 
           <input
             name="phone"
-            type="tel"
             maxLength="10"
             placeholder="Phone"
             value={formData.phone}
@@ -133,14 +173,12 @@ function BookingForm() {
 
           <input
             name="email"
-            type="email"
             placeholder="Email"
             value={formData.email}
             onChange={handleChange}
           />
           {errors.email && <p className="error">{errors.email}</p>}
 
-          <label>Wedding Date</label>
           <input
             type="date"
             name="weddingDate"
@@ -152,12 +190,11 @@ function BookingForm() {
           <input
             name="guests"
             type="number"
-            placeholder="Number of Guests"
+            placeholder="Guests"
             value={formData.guests}
             onChange={handleChange}
           />
 
-          <label>Functions</label>
           <div className="checkbox-group">
             <label><input type="checkbox" value="Haldi" onChange={handleCheckbox} /> Haldi</label>
             <label><input type="checkbox" value="Mehndi" onChange={handleCheckbox} /> Mehndi</label>
@@ -189,12 +226,14 @@ function BookingForm() {
 
           <textarea
             name="message"
-            placeholder="Additional Message"
+            placeholder="Message"
             value={formData.message}
             onChange={handleChange}
-          ></textarea>
+          />
 
-          <button type="submit">Book Now</button>
+          <button type="submit">
+            Pay & Book Now 💍
+          </button>
 
         </form>
       </div>

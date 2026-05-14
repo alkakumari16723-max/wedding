@@ -3,23 +3,19 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 60px;
+  gap: 40px;
   padding: 50px;
-  height: 950px;
-  background: #f8f8f8;
-
-  /* Background image */
-  background: url("../assets/REV1.jpg") no-repeat center center/cover;
+  min-height: 100vh;   /* ✅ better than fixed height */
+  background: url("../assets/REV1.jpg") no-repeat center/cover;
 }
 
 /* FORM SIDE */
 .booking-container {
   flex: 1;
-  width:100%;
-  max-width: 500px;
-  height: 100%;
+  width: 100%;
+  max-width: 450px;   /* 👈 control size */
   background: #fff;
-  padding: 30px;
+  padding: 25px;
   border-radius: 10px;
   box-shadow: 0 0 15px rgba(0,0,0,0.1);
 }
@@ -33,16 +29,16 @@
 form {
   display: flex;
   flex-direction: column;
-  height: 100%;
 }
 
 input, textarea {
+  width: 100%;   /* ✅ important */
   margin: 10px 0;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
   background-color: rgb(232, 189, 189);
-  color:white;
+  color: white;
 }
 
 textarea {
@@ -52,25 +48,24 @@ textarea {
 label {
   font-weight: bold;
   margin-top: 10px;
-  color:rgb(190, 98, 98)
+  color: rgb(190, 98, 98);
 }
 
 .checkbox-group {
   display: flex;
-  gap: 15px;
+  gap: 10px;
   flex-wrap: wrap;
 }
 
 /* BUTTON */
 button {
-  margin-top: 5px;
-  padding: 12px 20px;
-  background: rgb(146, 95, 95);
-  color:white;
+  margin-top: 10px;
+  padding: 12px;
+  background-color: #b57f87;
+  color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  margin-bottom: 28px;
 }
 
 button:hover {
@@ -81,34 +76,31 @@ button:hover {
 .booking-image {
   flex: 1;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
-  width: 100%;
 }
 
 .booking-image img {
   width: 100%;
-  max-width: 2700px;;
+  max-width: 500px;   /* ❌ 2700px hata diya */
   border-radius: 15px;
   object-fit: cover;
 }
 
-/* RESPONSIVE */
+/* ================= RESPONSIVE ================= */
+
 @media (max-width: 768px) {
   .booking-page {
     flex-direction: column;
     padding: 20px;
+    gap: 20px;
   }
 
-  .booking-container,
-  .booking-image {
-    width: 700px;
-    max-width: 200px;
-    justify-content: center;
-    width: 100%;
+  .booking-container {
+    max-width: 100%;   /* ✅ full width */
   }
 
-  .booking-image {
-    margin-top: 20px;
+  .booking-image img {
+    max-width: 100%;
   }
 }
