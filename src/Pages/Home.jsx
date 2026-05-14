@@ -22,7 +22,6 @@ import REV11 from "../assets/rev11.avif";
 import REV2 from "../assets/rev2.jpeg";
 import REV3 from "../assets/rev3.webp";
 import BookingForm from "./BookingForm";
-import AiWeddingGenerator from "../Components/AiWeddingGenerator";
 
 
     function Home() {

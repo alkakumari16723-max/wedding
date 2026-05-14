@@ -18,7 +18,6 @@ import Mumbai from "./Pages/Mumbai";
 import Uttarpradesh from "./Pages/Uttarpradesh";
 import Delhi from "./Pages/Delhi";
 import Payment from "./Pages/Payment";
-import AiWeddingGenerator from "./Components/AiWeddingGenerator";
 
 
 function App() {
