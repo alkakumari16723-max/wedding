@@ -6,7 +6,7 @@ function Contact() {
   return (
     <div className="contact-page">
 
-      {/* TOP SECTION (BG + RIGHT FORM) */}
+
          <div
         className="contact-top"
         style={{
@@ -14,8 +14,7 @@ function Contact() {
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat"
-        }}
-      >
+        }}>
 
         <div className="contact-overlay">
 
@@ -25,7 +24,7 @@ function Contact() {
             <p>We would love to plan your wedding 💍</p>
           </div>
 
-          {/* RIGHT FORM */}
+  
           <div className="contact-form-box">
             <ContactForm />
           </div>
@@ -33,7 +32,6 @@ function Contact() {
         </div>
       </div>
 
-      {/* BOTTOM SECTION (NORMAL) */}
       <div className="contact-bottom">
 
         <h3>Get in Touch</h3>

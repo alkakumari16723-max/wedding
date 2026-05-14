@@ -63,8 +63,8 @@ const [error, setError] = useState("");
       return;
     }
 
-    // ✅ success
-    alert("Subscribed successfully 🎉");
+  
+    alert("Subscribed successfully ");
 
     // optional: clear input
     setEmail("");
@@ -83,7 +83,6 @@ const [error, setError] = useState("");
         </div>
       </div>
 
-      {/* FEATURED */}
       <div className="featured-blog">
         <img src={blog1} alt="featured" />
         <div className="featured-content">
@@ -96,7 +95,6 @@ const [error, setError] = useState("");
         </div>
       </div>
 
-      {/* BLOG GRID */}
       <div className="blog-container">
         {blogs.map((blog) => (
           <div className="blog-card" key={blog.id}>
@@ -111,7 +109,7 @@ const [error, setError] = useState("");
         ))}
       </div>
 
-      {/* TIPS */}
+
       <div className="tips-section">
         <h2>Wedding Planning Tips</h2>
 

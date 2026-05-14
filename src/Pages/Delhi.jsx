@@ -17,7 +17,7 @@ import dg6 from "../assets/dg6.jpg";
 import dg7 from "../assets/dg7.jpg";
 import dg8 from "../assets/dg8.jpg";
 
-// packages (reuse)
+// packages
 import p1 from "../assets/p1.webp";
 import p2 from "../assets/p2.jpeg";
 import p3 from "../assets/p3.jpg";
@@ -28,7 +28,6 @@ function Delhi() {
   return (
     <div className="goa-page">
 
-      {/* HERO */}
       <div
         className="hero"
         style={{ backgroundImage: `url(${delhiHero})` }}
@@ -46,7 +45,7 @@ function Delhi() {
         </div>
       </div>
 
-      {/* VENUES */}
+
       <section className="venues">
         <h2>Top Wedding Venues in Delhi</h2>
 
@@ -94,7 +93,6 @@ function Delhi() {
         </div>
       </section>
 
-      {/* PACKAGES */}
       <section className="packages">
         <h2>Wedding Packages</h2>
 

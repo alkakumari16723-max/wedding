@@ -52,7 +52,7 @@ function Uttarpradesh() {
         </div>
       </div>
 
-      {/* VENUES */}
+    
       <section className="venues">
         <h2>Top Wedding Venues in Uttar Pradesh</h2>
 
@@ -100,7 +100,7 @@ function Uttarpradesh() {
         </div>
       </section>
 
-      {/* PACKAGES */}
+    
       <section className="packages">
         <h2>Wedding Packages</h2>
 
@@ -167,7 +167,7 @@ function Uttarpradesh() {
         </div>
       </section>
 
-      {/* POPUP */}
+  
       {showPopup && (
         <div 
           className="popup-overlay"
@@ -175,14 +175,12 @@ function Uttarpradesh() {
             if (e.target.className === "popup-overlay") {
               setShowPopup(false);
             }
-          }}
-        >
+          }}>
           <div className="popup-box">
             <span 
               className="close-btn"
-              onClick={() => setShowPopup(false)}
-            >
-              ✖
+              onClick={() => setShowPopup(false)} >
+              
             </span>
 
             <h2>Plan Your UP Wedding 💍</h2>
@@ -192,7 +190,7 @@ function Uttarpradesh() {
           </div>
         </div>
       )}
-      {/* GALLERY */}
+  
 <section className="gallery">
   <h2>Wedding Gallery</h2>
 
@@ -208,7 +206,6 @@ function Uttarpradesh() {
   </div>
 </section>
 
-{/* WHY CHOOSE UTTAR PRADESH */}
 <section className="why">
   <h2>Why Choose Uttar Pradesh?</h2>
 

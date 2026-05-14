@@ -18,7 +18,7 @@ import mg6 from "../assets/mg6.jpeg";
 import mg7 from "../assets/mg7.jpg";
 import mg8 from "../assets/mg8.jpg";
 
-// packages (you can reuse same)
+// packages
 import p1 from "../assets/p1.webp";
 import p2 from "../assets/p2.jpeg";
 import p3 from "../assets/p3.jpg";
@@ -29,7 +29,6 @@ function Mumbai() {
   return (
     <div className="goa-page">
 
-      {/* HERO */}
       <div className="hero"
               style={{ backgroundImage: `url(${mumbaiHero})` }}>
       
@@ -46,7 +45,7 @@ function Mumbai() {
         </div>
       </div>
 
-      {/* VENUES */}
+  
       <section className="venues">
         <h2>Top Wedding Venues in Mumbai</h2>
 
@@ -100,7 +99,7 @@ function Mumbai() {
         </div>
       </section>
 
-      {/* PACKAGES */}
+
       <section className="packages">
         <h2>Wedding Packages</h2>
 
@@ -159,7 +158,7 @@ function Mumbai() {
         </div>
       </section>
 
-      {/* GALLERY */}
+
       <section className="gallery">
         <h2>Mumbai Wedding Gallery</h2>
 
@@ -175,7 +174,7 @@ function Mumbai() {
         </div>
       </section>
 
-      {/* WHY MUMBAI */}
+
       <section className="why">
         <h2>Why Choose Mumbai?</h2>
 

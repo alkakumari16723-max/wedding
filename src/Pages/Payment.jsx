@@ -10,7 +10,7 @@ function Payment() {
 
   const [loading, setLoading] = useState(false);
 
-  // Load Razorpay script
+  
   const loadRazorpay = () => {
     return new Promise((resolve) => {
       if (window.Razorpay) return resolve(true);

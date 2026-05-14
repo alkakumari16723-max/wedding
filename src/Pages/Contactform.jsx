@@ -10,9 +10,9 @@ function ContactForm() {
   });
 
   const [errors, setErrors] = useState({});
-  const [loading, setLoading] = useState(false); // ✅ added
+  const [loading, setLoading] = useState(false); 
 
-  // 🔹 validation function
+
   const validate = () => {
     let newErrors = {};
 
@@ -62,7 +62,7 @@ function ContactForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (loading) return; // ❗ prevent multiple clicks
+    if (loading) return; 
 
     const validationErrors = validate();
 
@@ -112,10 +112,10 @@ function ContactForm() {
       Swal.fire({
         icon: "error",
         title: "Server Error",
-        text: "Server not responding ❌",
+        text: "Server not responding ",
       });
     } finally {
-      setLoading(false); // stop loading
+      setLoading(false);
     }
   };
 

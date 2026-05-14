@@ -10,7 +10,7 @@ function Wedding() {
   return (
     <div className="wedding-page">
 
-      {/* HERO */}
+  
       <div className="wed-hero">
         <img src={heroImg} alt="Wedding" />
         <div className="overlay">
@@ -33,7 +33,7 @@ function Wedding() {
         </p>
       </section>
 
-      {/* SERVICES */}
+    
       <section className="services">
         <h2>Our Wedding Services 💐</h2>
 
@@ -74,10 +74,6 @@ function Wedding() {
         </div>
       </section>
 
-      {/* EVENTS SECTION (DIFFERENT FROM PREWEDDING) */}
-      
-
-      {/* PROCESS */}
       <section className="process">
         <h2>How We Work 🛠️</h2>
 
@@ -104,7 +100,7 @@ function Wedding() {
         </div>
       </section>
 
-      {/* GALLERY */}
+  
       <section className="gallery">
         <h2>Wedding Highlights 📸</h2>
 
@@ -116,7 +112,7 @@ function Wedding() {
         </div>
       </section>
 
-      {/* TESTIMONIAL SLIDER IDEA */}
+
       <section className="testimonial">
         <h2>Happy Couples 💬</h2>
 
@@ -129,7 +125,7 @@ function Wedding() {
         </div>
       </section>
 
-      {/* CTA */}
+      
       <section className="cta">
         <h2>Plan Your Dream Wedding With Us 💖</h2>
         <p>

@@ -18,6 +18,7 @@ import Mumbai from "./Pages/Mumbai";
 import Uttarpradesh from "./Pages/Uttarpradesh";
 import Delhi from "./Pages/Delhi";
 import Payment from "./Pages/Payment";
+import AiWeddingGenerator from "./Components/AiWeddingGenerator";
 
 
 function App() {
@@ -44,6 +45,10 @@ function App() {
         <Route path="/services/reception" element={<Reception />} />
         <Route path="/mumbai" element={<Mumbai />} />
         <Route path="/payment" element={<Payment />} />
+          <Route
+        path="/ai-wedding-generator"
+        element={<AiWeddingGenerator />}
+      />
       </Routes>
 
       <Footer />   

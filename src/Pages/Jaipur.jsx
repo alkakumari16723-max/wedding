@@ -31,7 +31,6 @@ function Jaipur() {
   return (
     <div className="goa-page">
 
-      {/* HERO */}
       <div
         className="hero"
         style={{ backgroundImage: `url(${jaipurHero})` }}
@@ -53,7 +52,7 @@ function Jaipur() {
         </div>
       </div>
 
-      {/* VENUES */}
+
       <section className="venues">
         <h2>Top Wedding Venues in Jaipur</h2>
 
@@ -99,13 +98,13 @@ function Jaipur() {
         </div>
       </section>
 
-      {/* PACKAGES */}
+    
       <section className="packages">
         <h2>Wedding Packages</h2>
 
         <div className="package-cards">
 
-          {/* SILVER */}
+  
           <div className="package">
             <img src={jl1} alt="Silver Package" />
             <div className="package-content">
@@ -125,7 +124,7 @@ function Jaipur() {
             </div>
           </div>
 
-          {/* GOLD */}
+      
           <div className="package popular">
             <img src={jl2} alt="Gold Package" />
             <div className="package-content">
@@ -145,7 +144,7 @@ function Jaipur() {
             </div>
           </div>
 
-          {/* LUXURY */}
+  
           <div className="package">
             <img src={jl3} alt="Luxury Package" />
             <div className="package-content">
@@ -168,7 +167,7 @@ function Jaipur() {
         </div>
       </section>
 
-      {/* POPUP */}
+
       {showPopup && (
         <div 
           className="popup-overlay"
@@ -176,14 +175,12 @@ function Jaipur() {
             if (e.target.className === "popup-overlay") {
               setShowPopup(false);
             }
-          }}
-        >
+          }}>
           <div className="popup-box">
             <span 
               className="close-btn"
-              onClick={() => setShowPopup(false)}
-            >
-              ✖
+              onClick={() => setShowPopup(false)}>
+              
             </span>
 
             <h2>Plan Your Jaipur Wedding 💍</h2>
@@ -193,7 +190,7 @@ function Jaipur() {
           </div>
         </div>
       )}
-      {/* GALLERY */}
+  
 <section className="gallery">
   <h2>Wedding Gallery</h2>
 
@@ -209,7 +206,6 @@ function Jaipur() {
   </div>
 </section>
 
-{/* WHY CHOOSE JAIPUR */}
 <section className="why">
   <h2>Why Choose Jaipur?</h2>
 

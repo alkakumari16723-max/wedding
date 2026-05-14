@@ -10,7 +10,7 @@ function PreWedding() {
   return (
     <div className="prewedding-page">
 
-      {/* HERO */}
+  
       <div className="pre-hero">
         <img src={heroImg} alt="Pre Wedding Shoot" />
         <div className="overlay">
@@ -19,7 +19,7 @@ function PreWedding() {
         </div>
       </div>
 
-      {/* INTRO STORY */}
+  
       <section className="intro">
         <h2>Not Just a Shoot, A Memory for Life ✨</h2>
         <p>
@@ -35,7 +35,7 @@ function PreWedding() {
         </p>
       </section>
 
-      {/* EXPERIENCE SECTION */}
+
       <section className="experience">
         <h2>The Experience We Create </h2>
         <p>
@@ -52,7 +52,7 @@ function PreWedding() {
         </p>
       </section>
 
-      {/* SERVICES (REFINED TEXT HEAVY) */}
+
       <section className="services">
         <h2>What We Offer </h2>
 
@@ -92,7 +92,7 @@ function PreWedding() {
         </div>
       </section>
 
-      {/* PROCESS (MORE WRITTEN) */}
+
       <section className="process">
         <h2>Our Process </h2>
 
@@ -131,7 +131,7 @@ function PreWedding() {
         </div>
       </section>
 
-      {/* GALLERY */}
+    
       <section className="gallery">
         <h2>Captured Moments </h2>
         <p className="gallery-text">
@@ -184,7 +184,7 @@ function PreWedding() {
   </div>
 </section>
 
-      {/* FINAL CTA */}
+
       <section className="cta">
   <h2>Let’s Tell Your Story 💖</h2>
   <p>

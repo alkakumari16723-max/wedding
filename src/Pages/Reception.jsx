@@ -11,7 +11,7 @@ function Reception() {
   return (
     <div className="reception-page">
 
-      {/* HERO */}
+      
       <div className="rec-hero">
         <img src={heroImg} alt="Reception" />
         <div className="overlay">
@@ -20,7 +20,6 @@ function Reception() {
         </div>
       </div>
 
-      {/* INTRO */}
       <section className="intro">
         <h2>The Grand Celebration Night ✨</h2>
         <p>
@@ -34,7 +33,7 @@ function Reception() {
         </p>
       </section>
 
-{/* RECEPTION EXPERIENCE */}
+
 <section className="experience">
   <h2>An Evening Full of Celebration ✨</h2>
 
@@ -45,7 +44,7 @@ function Reception() {
     your journey.
   </p>
 
-  {/* IMAGE */}
+
   <div className="exp-image">
     <img src={recMid} alt="Reception Celebration" />
   </div>
@@ -69,7 +68,7 @@ function Reception() {
   </p>
 </section>
 
-      {/* SERVICES */}
+    
       <section className="services">
         <h2>Reception Highlights </h2>
 
@@ -114,7 +113,7 @@ function Reception() {
 
       
 
-      {/* GALLERY */}
+  
       <section className="gallery">
         <h2>Reception Moments </h2>
 
@@ -127,7 +126,7 @@ function Reception() {
       </section>
 
      
-      {/* CTA */}
+  
       <section className="cta">
         <h2>Let’s Plan Your Reception </h2>
         <p>

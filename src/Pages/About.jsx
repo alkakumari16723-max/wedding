@@ -21,7 +21,6 @@ function About() {
         </div>
       </div>
 
-      {/* INTRO SECTION */}
       <div className="about-intro">
         <div className="about-text">
           <h2>Who We Are</h2>
@@ -38,7 +37,6 @@ function About() {
       </div>
 
 
-  {/* STORY SECTION */}
 <div className="about-story">
   <div className="story-content">
     <h2>Our Story</h2>
@@ -64,7 +62,6 @@ function About() {
   </div>
 </div>
 
-      {/* STATS SECTION */}
       <div className="about-stats">
         <div className="stat">
           <h3>500+</h3>
@@ -86,7 +83,7 @@ function About() {
           <p>Client Rating</p>
         </div>
       </div>
-      {/* FOUNDERS SECTION */}
+
 <div className="about-founders">
   <h2>Meet Our Founders</h2>
 
@@ -99,7 +96,7 @@ function About() {
       <p>
         Riya is the creative soul behind our luxury wedding designs.
         She transforms ideas into breathtaking experiences with her
-        eye for detail and passion for elegance.
+        eye for detail and passion for eligance.
       </p>
     </div>
 

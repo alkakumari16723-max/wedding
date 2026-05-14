@@ -122,7 +122,7 @@ function BookingForm() {
               }
             );
 
-            alert("Payment Successful 🎉");
+            alert("Payment Successful ");
 
             navigate("/payment-success", {
               state: { booking: bookingRes.data }

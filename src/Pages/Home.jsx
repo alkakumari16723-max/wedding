@@ -22,6 +22,7 @@ import REV11 from "../assets/rev11.avif";
 import REV2 from "../assets/rev2.jpeg";
 import REV3 from "../assets/rev3.webp";
 import BookingForm from "./BookingForm";
+import AiWeddingGenerator from "../Components/AiWeddingGenerator";
 
 
     function Home() {
@@ -58,7 +59,7 @@ import BookingForm from "./BookingForm";
     <>
       
 
-      {/* HERO */}
+
       <div className="home">
         <video autoPlay loop muted playsInline className="home-video">
           <source src={videoBg} type="video/mp4" />
@@ -85,7 +86,7 @@ import BookingForm from "./BookingForm";
   </p>
 </div>
 
-    {/* SERVICES */}
+  
       <div className="services">
         <h2>Our Services</h2>
 
@@ -134,7 +135,7 @@ import BookingForm from "./BookingForm";
         </div>
       </div>
 
-      {/* RECENT EVENTS */}
+
 <div className="recent-events">
   <h2>Recent Events</h2>
 
@@ -175,7 +176,7 @@ import BookingForm from "./BookingForm";
 </div>
 
 
-{/* REVIEWS */}
+
 <div className="reviews">
 
   <h2>What Our Clients Say 💕</h2>

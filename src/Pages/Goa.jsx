@@ -28,7 +28,7 @@ function Goa() {
     <div className="goa-page">
         <img src={goaHero} className="hero-img" />
 
-      {/* HERO */}
+
       <div className="hero">
         <div className="overlay">
           <h1>Goa Destination Wedding 💍</h1>
@@ -41,7 +41,7 @@ function Goa() {
         </div>
       </div>
 
-      {/* VENUES */}
+
       <section className="venues">
         <h2>Top Wedding Venues in Goa</h2>
 
@@ -118,7 +118,7 @@ function Goa() {
       </div>
     </div>
 
-    {/* Gold */}
+
     <div className="package popular">
       <div className="badge">Most Popular</div>
 
@@ -138,7 +138,6 @@ function Goa() {
       </div>
     </div>
 
-    {/* Luxury */}
     <div className="package">
       <img src={p3} alt="Luxury Package" />
 
@@ -159,7 +158,7 @@ function Goa() {
   </div>
 </section>
 
-     <section className="gallery">
+  <section className="gallery">
   <h2>Wedding Gallery</h2>
 
   <div className="gallery-grid">
@@ -198,7 +197,7 @@ function Goa() {
 
   </div>
 </section>
-      {/* WHY CHOOSE */}
+
       <section className="why">
         <h2>Why Choose Goa?</h2>
 

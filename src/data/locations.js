@@ -47,16 +47,7 @@ const locations = [
     price: "₹5L - ₹35L",
     venues: ["Taj Mahal Area Hotels", "Lucknow Banquets"]
   },
-  {
-    id: 6,
-    name: "Punjab",
-    path: "/punjab",
-    image: "/images/punjab.jpg",
-    description: "Grand Punjabi weddings with big celebrations",
-    price: "₹10L - ₹50L",
-    venues: ["Palace Resorts", "Luxury Farmhouses"]
-  }
-
+  
 ];
 
 export default locations;
