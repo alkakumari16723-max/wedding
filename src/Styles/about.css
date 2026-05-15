@@ -53,7 +53,7 @@
   gap: 40px;
   align-items: center;
   background-color: #fff0f5;
-  flex-wrap: wrap; /* ✅ important */
+  flex-wrap: wrap; 
 }
 
 .about-text {
