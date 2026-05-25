@@ -1,0 +1,192 @@
+
+/* ================= PAGE ================= */
+
+.login-page {
+  min-height: 100vh;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  padding: 20px;
+
+  background:
+    linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+    url("../assets/REV6.jpg");
+
+  background-size: cover;
+
+  background-position: center;
+}
+
+/* ================= FORM BOX ================= */
+
+.login-form {
+  width: 100%;
+
+  max-width: 420px;
+
+  padding: 35px;
+
+  border-radius: 20px;
+
+  background: rgba(55, 30, 30, 0.82);
+
+  backdrop-filter: blur(10px);
+
+  border: 1px solid rgba(255,255,255,0.12);
+
+  box-shadow: 0 10px 35px rgba(0,0,0,0.45);
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 16px;
+}
+
+/* ================= HEADING ================= */
+
+.login-form h2 {
+  text-align: center;
+
+  color: white;
+
+  font-size: 28px;
+
+  font-weight: 700;
+}
+
+/* ================= INPUT ================= */
+
+.login-form input {
+  width: 100%;
+
+  padding: 13px;
+
+  border-radius: 10px;
+
+  border: 1px solid rgba(255,255,255,0.15);
+
+  background: rgba(110, 65, 65, 0.75);
+
+  color: white;
+
+  font-size: 15px;
+
+  outline: none;
+
+  transition: 0.3s;
+}
+
+/* placeholder */
+
+.login-form input::placeholder {
+  color: rgba(255,255,255,0.65);
+}
+
+/* focus */
+
+.login-form input:focus {
+  border-color: #ff8b8b;
+
+  box-shadow: 0 0 10px rgba(255,139,139,0.25);
+
+  background: rgba(130, 75, 75, 0.90);
+}
+
+/* ================= BUTTON ================= */
+
+.login-form button {
+  width: 100%;
+
+  padding: 13px;
+
+  border: none;
+
+  border-radius: 10px;
+
+  background: linear-gradient(135deg, #b45a5a, #6e3535);
+
+  color: white;
+
+  font-size: 16px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.login-form button:hover {
+  transform: translateY(-2px);
+
+  background: linear-gradient(135deg, #c96a6a, #7b4040);
+}
+
+/* ================= TEXT ================= */
+
+.login-form p {
+  text-align: center;
+
+  color: white;
+
+  font-size: 14px;
+}
+
+/* ================= LINK ================= */
+
+.login-form a {
+  color: #ffd4d4;
+
+  text-decoration: none;
+
+  font-weight: bold;
+
+  margin-left: 5px;
+}
+
+/* ================= AUTOFILL FIX ================= */
+
+.login-form input:-webkit-autofill {
+  -webkit-text-fill-color: white !important;
+
+  -webkit-box-shadow: 0 0 0px 1000px rgba(110, 65, 65, 0.75) inset !important;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+
+  .login-form {
+    max-width: 90%;
+
+    padding: 28px;
+  }
+
+  .login-form h2 {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .login-form {
+    max-width: 95%;
+
+    padding: 22px;
+  }
+
+  .login-form input {
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  .login-form button {
+    padding: 12px;
+    font-size: 15px;
+  }
+}

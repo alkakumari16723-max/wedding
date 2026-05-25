@@ -1,106 +1,301 @@
-/* PAGE WRAPPER */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* ================= PAGE ================= */
 .booking-page {
+  min-height: 100vh;
+
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 40px;
+  justify-content: flex-start;
+
   padding: 50px;
-  min-height: 100vh;   /* ✅ better than fixed height */
-  background: url("../assets/REV1.jpg") no-repeat center/cover;
+
+  background: url("../assets/REV1.jpg") no-repeat center center/cover;
 }
 
-/* FORM SIDE */
+/* ================= CONTAINER ================= */
 .booking-container {
-  flex: 1;
   width: 100%;
-  max-width: 450px;   /* 👈 control size */
-  background: #fff;
-  padding: 25px;
-  border-radius: 10px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  max-width: 550px;
+
+  padding: 30px;
+
+  border-radius: 18px;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  border: 1px solid rgba(255, 255, 255, 0.15);
+
+  backdrop-filter: blur(6px);
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
 }
 
+/* ================= TITLE ================= */
 .booking-container h2 {
-  margin-bottom: 20px;
-  color: #ff4d6d;
+  text-align: center;
+
+  color: white;
+
+  margin-bottom: 25px;
+
+  font-size: 28px;
+
+  font-weight: bold;
 }
 
-/* FORM */
+/* ================= FORM ================= */
 form {
   display: flex;
   flex-direction: column;
+  gap: 14px;
 }
 
-input, textarea {
-  width: 100%;   /* ✅ important */
-  margin: 10px 0;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background-color: rgb(232, 189, 189);
-  color: white;
-}
-
+/* ================= INPUT / SELECT / TEXTAREA ================= */
+input,
+select,
 textarea {
-  height: 80px;
+  width: 100%;
+
+  padding: 13px 15px;
+
+  border-radius: 10px;
+
+  border: 1px solid rgba(247, 81, 81, 0.25);
+
+  background: rgba(95, 55, 55, 0.75);
+
+  color: white;
+
+  font-size: 14px;
+
+  outline: none;
+
+  transition: all 0.3s ease;
 }
 
-label {
-  font-weight: bold;
-  margin-top: 10px;
-  color: rgb(190, 98, 98);
+/* placeholder */
+input::placeholder,
+textarea::placeholder {
+  color: rgba(255, 230, 230, 0.75);
 }
 
+/* focus effect */
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #ff4d6d;
+
+  box-shadow: 0 0 10px rgba(255, 77, 109, 0.45);
+
+  background: rgba(255, 90, 90, 0.22);
+}
+
+/* textarea */
+textarea {
+  min-height: 110px;
+  resize: none;
+}
+
+/* date input */
+input[type="date"] {
+  color-scheme: dark;
+}
+
+/* select options */
+select option {
+  background: white;
+  color: black;
+}
+
+/* ================= CHECKBOX GROUP ================= */
 .checkbox-group {
   display: flex;
-  gap: 10px;
   flex-wrap: wrap;
+  gap: 10px;
 }
 
-/* BUTTON */
-button {
-  margin-top: 10px;
-  padding: 12px;
-  background-color: #b57f87;
+/* checkbox label */
+.checkbox-group label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 8px 12px;
+
+  border-radius: 8px;
+
+  border: 1px solid rgba(255, 255, 255, 0.25);
+
+  background: rgba(255, 120, 120, 0.12);
+
   color: white;
-  border: none;
-  border-radius: 5px;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.checkbox-group label:hover {
+  background: rgba(255, 120, 120, 0.2);
+}
+
+/* custom checkbox */
+.checkbox-group input[type="checkbox"] {
+  appearance: none;
+
+  width: 16px;
+  height: 16px;
+
+  border: 2px solid white;
+
+  border-radius: 4px;
+
+  position: relative;
+
   cursor: pointer;
 }
 
-button:hover {
-  background: #e63950;
+/* checked */
+.checkbox-group input[type="checkbox"]:checked {
+  background:rgba(95, 55, 55, 0.75);
+  border-color: #ff4d6d;
 }
 
-/* IMAGE SIDE */
-.booking-image {
-  flex: 1;
+/* tick */
+.checkbox-group input[type="checkbox"]:checked::after {
+  content: "✔";
+
+  position: absolute;
+
+  top: -3px;
+  left: 2px;
+
+  font-size: 12px;
+
+  color: white;
+}
+
+/* ================= SERVICES ================= */
+.services-wrapper {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  gap: 10px;
 }
 
-.booking-image img {
+/* services box */
+.services-box {
+  min-height: 55px;
+
+  border-radius: 10px;
+
+  padding: 10px;
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  background: rgba(255, 120, 120, 0.12);
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* service chips */
+.service-chip {
+  background: rgb(95, 55, 55);
+
+  color: white;
+
+  padding: 6px 12px;
+
+  border-radius: 20px;
+
+  font-size: 13px;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.service-chip:hover {
+  transform: scale(1.05);
+}
+
+/* no service text */
+.no-service {
+  color: rgba(255, 255, 255, 0.7);
+
+  font-size: 13px;
+}
+
+button {
+  margin-top: 12px;
+
   width: 100%;
-  max-width: 500px;   /* ❌ 2700px hata diya */
-  border-radius: 15px;
-  object-fit: cover;
+
+  padding: 14px;
+
+  border: none;
+
+  border-radius: 12px;
+
+  background: rgb(95, 55, 55);
+
+  color: white;
+
+  font-size: 16px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.5px;
+
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+}
+
+button:hover {
+  transform: translateY(-2px);
+
+  background: linear-gradient(135deg, #a35c5c, #6b3535);
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+}
+
+button:active {
+  transform: scale(0.98);
+}
+/* ================= ERROR ================= */
+.error {
+  color: #ffd6d6;
+
+  font-size: 12px;
+
+  margin-top: -5px;
 }
 
 /* ================= RESPONSIVE ================= */
-
 @media (max-width: 768px) {
   .booking-page {
-    flex-direction: column;
+    justify-content: center;
+
     padding: 20px;
-    gap: 20px;
   }
 
   .booking-container {
-    max-width: 100%;   /* ✅ full width */
+    max-width: 100%;
+
+    padding: 24px;
   }
 
-  .booking-image img {
-    max-width: 100%;
+  .checkbox-group {
+    flex-direction: column;
   }
 }

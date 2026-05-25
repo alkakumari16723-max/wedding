@@ -44,7 +44,6 @@
   font-size: 14px;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
   .footer-container {
     grid-template-columns: 1fr 1fr;

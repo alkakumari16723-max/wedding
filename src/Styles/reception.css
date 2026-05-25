@@ -4,7 +4,6 @@
   color: #fff;
 }
 
-/* HERO */
 .rec-hero {
   position: relative;
   height: 90vh;
@@ -34,7 +33,6 @@
   opacity: 0.9;
 }
 
-/* INTRO */
 .intro {
   padding: 80px 100px;
   text-align: center;
@@ -70,7 +68,6 @@
 
 
 
-/* GALLERY */
 .reception-page gallery {
   padding: 80px;
   text-align: center;
@@ -87,9 +84,6 @@
   border-radius: 10px;
 }
 
-
-
-/* CTA */
 .cta {
   padding: 80px;
   text-align: center;
@@ -103,7 +97,6 @@
   border: none;
   cursor: pointer;
 }
-/* IMAGE INSIDE TEXT */
 .exp-image {
   margin: 40px 0;
   display: flex;

@@ -1,11 +1,10 @@
-/* PAGE */
+
 .prewedding-page {
   font-family: "Poppins", sans-serif;
   background: #f8f8f8;
   overflow-x: hidden;
 }
 
-/* ================= HERO ================= */
 .pre-hero {
   position: relative;
   height: 90vh;
@@ -64,7 +63,7 @@ section p {
   line-height: 1.7;
 }
 
-/* ================= SERVICE ================= */
+
 .service-cards {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -84,7 +83,7 @@ section p {
   transform: translateY(-5px);
 }
 
-/* ================= PROCESS ================= */
+
 .steps {
   display: flex;
   flex-wrap: wrap;
@@ -97,7 +96,7 @@ section p {
   min-width: 200px;
 }
 
-/* ================= 🔥 FIXED GALLERY ================= */
+
 .prewedding-page .gallery-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -145,6 +144,7 @@ section p {
   border: none;
   border-radius: 30px;
   cursor: pointer;
+  width:250px;
 }
 
 /* ================= RESPONSIVE ================= */

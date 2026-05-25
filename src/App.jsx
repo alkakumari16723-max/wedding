@@ -18,6 +18,9 @@ import Mumbai from "./Pages/Mumbai";
 import Uttarpradesh from "./Pages/Uttarpradesh";
 import Delhi from "./Pages/Delhi";
 import Payment from "./Pages/Payment";
+import Register from "./Pages/Register";
+import Login from "./Pages/Login";
+import EnquiryForm from "./Pages/EnquiryForm";
 
 
 function App() {
@@ -44,7 +47,9 @@ function App() {
         <Route path="/services/reception" element={<Reception />} />
         <Route path="/mumbai" element={<Mumbai />} />
         <Route path="/payment" element={<Payment />} />
-    
+        <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/enquiry" element={<EnquiryForm />} />
       </Routes>
 
       <Footer />   

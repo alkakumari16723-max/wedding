@@ -1,0 +1,343 @@
+/* ================= FONT ================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* ================= PAGE ================= */
+
+.enquiry-page {
+
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 40px 20px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #fff1f4,
+      #ffe5ec
+    );
+
+  font-family: "Poppins", sans-serif;
+}
+
+/* ================= BOX ================= */
+
+.enquiry-box {
+
+  width: 100%;
+  max-width: 1150px;
+
+  display: flex;
+
+  background: white;
+
+  border-radius: 25px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 10px 40px rgba(0,0,0,0.12);
+}
+
+/* ================= LEFT ================= */
+
+.enquiry-left {
+
+  width: 45%;
+
+  padding: 60px 45px;
+
+  background:
+   rgb(95,55,55);
+
+  color: white;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.tag {
+
+  width: fit-content;
+
+  background: rgba(255,255,255,0.2);
+
+  padding: 8px 18px;
+
+  border-radius: 50px;
+
+  font-size: 13px;
+
+  margin-bottom: 20px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  margin-left: auto;
+
+  margin-right: auto;
+}
+
+.enquiry-left h1 {
+
+  font-size: 42px;
+
+  line-height: 1.3;
+
+  margin-bottom: 20px;
+}
+
+.enquiry-left p {
+
+  font-size: 16px;
+
+  line-height: 1.8;
+
+  opacity: 0.95;
+}
+
+/* ================= FORM ================= */
+
+.enquiry-form {
+
+  width: 55%;
+
+  padding: 50px 40px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 16px;
+}
+
+.enquiry-form h2 {
+
+  font-size: 30px;
+
+  color: #222;
+
+  margin-bottom: 10px;
+}
+
+/* ================= INPUT GROUP ================= */
+
+.input-group {
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 7px;
+}
+
+.input-group label {
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  color: #444;
+}
+
+/* ================= INPUTS ================= */
+
+.enquiry-form input,
+.enquiry-form textarea {
+
+  width: 100%;
+
+  padding: 15px;
+
+  border: 1px solid #ddd;
+
+  border-radius: 12px;
+
+  background: white;
+
+  color: #222;
+
+  font-size: 15px;
+
+  outline: none;
+
+  transition: 0.3s;
+}
+
+/* PLACEHOLDER */
+
+.enquiry-form input::placeholder,
+.enquiry-form textarea::placeholder {
+
+  color: #777;
+}
+
+/* FOCUS */
+
+.enquiry-form input:focus,
+.enquiry-form textarea:focus {
+
+  border-color: #ff4d6d;
+
+  box-shadow:
+    0 0 0 3px rgba(255,77,109,0.15);
+}
+
+/* READONLY FIX */
+
+.enquiry-form input[readonly] {
+
+  background: #f3f3f3;
+
+  color: #222 !important;
+
+  opacity: 1 !important;
+
+  -webkit-text-fill-color: #222 !important;
+}
+
+/* TEXTAREA */
+
+.enquiry-form textarea {
+
+  height: 120px;
+
+  resize: none;
+}
+
+/* ================= BUTTON ================= */
+
+.enquiry-form button {
+
+  margin-top: 10px;
+
+  padding: 15px;
+
+  border: none;
+
+  border-radius: 12px;
+
+  background:rgb(95,55,55);
+
+  color: white;
+
+  font-size: 16px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.enquiry-form button:hover {
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 8px 20px rgba(255,77,109,0.3);
+}
+
+/* ================= TABLET ================= */
+
+@media (max-width: 900px) {
+
+  .enquiry-box {
+
+    flex-direction: column;
+  }
+
+  .enquiry-left,
+  .enquiry-form {
+
+    width: 100%;
+  }
+
+  .enquiry-left {
+
+    padding: 45px 30px;
+
+    text-align: center;
+
+    align-items: center;
+  }
+
+  .enquiry-left h1 {
+
+    font-size: 34px;
+  }
+
+  .enquiry-form {
+
+    padding: 40px 30px;
+  }
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 600px) {
+
+  .enquiry-page {
+
+    padding: 20px 10px;
+  }
+
+  .enquiry-box {
+
+    border-radius: 18px;
+  }
+
+  .enquiry-left {
+
+    padding: 35px 20px;
+  }
+
+  .enquiry-left h1 {
+
+    font-size: 26px;
+  }
+
+  .enquiry-left p {
+
+    font-size: 14px;
+  }
+
+  .enquiry-form {
+
+    padding: 30px 18px;
+  }
+
+  .enquiry-form h2 {
+
+    font-size: 24px;
+
+    text-align: center;
+  }
+
+  .enquiry-form input,
+  .enquiry-form textarea {
+
+    padding: 13px;
+
+    font-size: 14px;
+  }
+
+  .enquiry-form textarea {
+
+    height: 100px;
+  }
+
+  .enquiry-form button {
+
+    padding: 13px;
+
+    font-size: 15px;
+  }
+}
